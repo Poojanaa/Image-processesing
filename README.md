@@ -42,3 +42,40 @@ img.show()<br>
 **Outpuit:-**<br>
 ![image](https://user-images.githubusercontent.com/98141711/173810740-daca2918-89ff-479b-8b7a-acec028416d7.png)<br>
 <br>
+**6.Develop a program to initalize the imge using various color.**<br>
+import cv2<br>
+import matplotlib.pyplot as plt<br>
+import numpy as np<br>
+img=cv2.imread('b3.png')<br>
+plt.imshow(img)<br>
+plt.show()<br>
+img=cv2.cvtColor(img,cv2.COLOR_BGR2RGB)<br>
+plt.imshow(img)<br>
+plt.show()<br>
+img=cv2.cvtColor(img,cv2.COLOR_BGR2HSV)<br>
+plt.imshow(img)<br>
+plt.show()<br>
+**Output:-**<br>
+![image](https://user-images.githubusercontent.com/98141711/173816748-feaf3062-2953-4436-b427-a799029fc0d3.png)<br>
+![image](https://user-images.githubusercontent.com/98141711/173816823-e0ec35cb-b247-45e6-8330-5f08e64de099.png)<br>
+**7.Write a program to display the image attributes.**<br>
+from PIL import Image<br>
+image=Image.open('b3.png')<br>
+print("Filename:",image.filename)<br>
+print("Format:",image.format)<br>
+print("Mode:",image.mode)<br>
+print("Size:",image.size)<br>
+print("Width:",image.width)<br>
+print("Height:",image.height)<br>
+**Output:-**<br>
+Filename: b3.png<br>
+Format: PNG<br>
+Mode: RGB<br>
+Size: (840, 583)<br>
+Width: 840<br>
+Height: 583<br>
+<br>
+
+
+
+
