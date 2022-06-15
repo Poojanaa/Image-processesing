@@ -23,7 +23,7 @@ Original_Image=Image.open('b3.png')<br>
 rotate_image1=Original_Image.rotate(180)<br>
 rotate_image1.show()<br>
 **Output:-**<br>
-A pitcure will be rorated in 180 degree.<br>
+![image](https://user-images.githubusercontent.com/98141711/173810563-fce9731b-6c20-4ddf-a8a1-2f35b2f1a15f.png)<br>
 <br>
 **4.Develop a program to convert color string to RGB color values.**<br>
 from PIL import ImageColor<br>
@@ -40,5 +40,5 @@ from PIL import Image<br>
 img=Image.new('RGB',(200,400),(255,0,0))<br>
 img.show()<br>
 **Outpuit:-**<br>
-red color<br>
+![image](https://user-images.githubusercontent.com/98141711/173810740-daca2918-89ff-479b-8b7a-acec028416d7.png)<br>
 <br>
