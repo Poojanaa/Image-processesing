@@ -75,6 +75,25 @@ Size: (840, 583)<br>
 Width: 840<br>
 Height: 583<br>
 <br>
+**9.Convert the original to grey scale and then to binary import cv2.**<br>
+import cv2 <br>
+img=cv2.imread('b3.png')<br>
+cv2.imshow("RGB",img)<br>
+cv2.waitKey(0)<br>
+img=cv2.imread('b3.png',0)<br>
+cv2.imshow("Gray",img)<br>
+cv2.waitKey(0)<br>
+ret,bw_img=cv2.threshold(img,127,255,cv2.THRESH_BINARY)<br>
+cv2.imshow("Binary",bw_img)<br>
+cv2.waitKey(0)<br>
+cv2.destroyAllWindows()<br>
+**Output:-**<br>
+![image](https://user-images.githubusercontent.com/98141711/174048843-e4d1eb9c-9b75-4fb5-9e24-066ef855b7fa.png)<br>
+![image](https://user-images.githubusercontent.com/98141711/174049224-7db64b2a-9ab9-4a82-8c81-f9ee5dc06d6e.png)<br>
+![image](https://user-images.githubusercontent.com/98141711/174049512-edb8ca08-503d-4e4f-bd32-c0cb98f6311f.png)<br>
+
+
+
 
 
 
