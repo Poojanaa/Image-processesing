@@ -75,6 +75,22 @@ Size: (840, 583)<br>
 Width: 840<br>
 Height: 583<br>
 <br>
+**8.Resize the original image.**<br>
+import cv2<br>
+img=cv2.imread('b3.png')<br>
+print('original image length width',img.shape)<br>
+cv2.imshow('original image',img)<br>
+cv2.waitKey(0)<br>
+imgresize=cv2.resize(img,(150,160))<br>
+cv2.imshow('Resized image',imgresize)<br>
+print('Resized image length width',imgresize.shape)<br>
+cv2.waitKey(0)<br>
+**Outputy:-**<br>
+original image length width (583, 840, 3)<br>
+![image](https://user-images.githubusercontent.com/98141711/174057743-dd1d4d44-34aa-4b68-8a82-4097709b6b09.png)<br>
+Resized image length width (160, 150, 3)<br>
+![image](https://user-images.githubusercontent.com/98141711/174057963-7c0159b6-7783-4f2c-aa76-fa5fb770e0f5.png)<br>
+<br>
 **9.Convert the original to grey scale and then to binary import cv2.**<br>
 import cv2 <br>
 img=cv2.imread('b3.png')<br>
@@ -91,6 +107,7 @@ cv2.destroyAllWindows()<br>
 ![image](https://user-images.githubusercontent.com/98141711/174048843-e4d1eb9c-9b75-4fb5-9e24-066ef855b7fa.png)<br>
 ![image](https://user-images.githubusercontent.com/98141711/174049224-7db64b2a-9ab9-4a82-8c81-f9ee5dc06d6e.png)<br>
 ![image](https://user-images.githubusercontent.com/98141711/174049512-edb8ca08-503d-4e4f-bd32-c0cb98f6311f.png)<br>
+<br>
 
 
 
