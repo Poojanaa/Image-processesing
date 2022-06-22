@@ -121,11 +121,25 @@ plt.show()<br>
 import cv2<br>
 import matplotlib.image as mpimg<br>
 import matplotlib.pyplot as plt<br>
-img=cv2.imread('flowers5.jpg')<br>
+img=mpimg.imread('flowers5.jpg')<br>
 plt.imshow(img)<br>
 plt.show()<br>
 **Output:-**<br>
-![image](https://user-images.githubusercontent.com/98141711/175010762-228cb103-ec4b-4548-9774-2e7160120be4.png)<br>
+![image](https://user-images.githubusercontent.com/98141711/175018126-a6f4a12e-e90f-4d5b-a457-def12b366120.png)<br>
+<br>
+hsv_img=cv2.cvtColor(img,cv2.COLOR_RGB2HSV)<br>
+light_orange=(1, 190, 200)<br>
+dark_orange=(18, 255, 255)<br>
+mask=cv2.inRange(hsv_img,light_orange,dark_orange)<br>
+result=cv2.bitwise_and(img,img,mask=mask)<br>
+plt.subplot(1,2,1)<br>
+plt.imshow(mask,cmap="gray")<br>
+plt.subplot(1,2,2)<br>
+plt.imshow(result)<br>
+plt.show()<br>
+**Output:-**<br>
+![image](https://user-images.githubusercontent.com/98141711/175018505-dcee9d3c-ac53-4fc8-a079-f455e24206ad.png)<br>
+
 
 
 
