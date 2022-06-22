@@ -118,6 +118,15 @@ plt.show()<br>
 **Output:-**<br>
 ![image](https://user-images.githubusercontent.com/98141711/175008117-11bb6bfa-8898-4ffe-86c0-364c2c504ff7.png)<br>
 **11.Write a program to mask and blur the image.**<br>
+import cv2<br>
+import matplotlib.image as mpimg<br>
+import matplotlib.pyplot as plt<br>
+img=cv2.imread('flowers5.jpg')<br>
+plt.imshow(img)<br>
+plt.show()<br>
+**Output:-**<br>
+![image](https://user-images.githubusercontent.com/98141711/175010762-228cb103-ec4b-4548-9774-2e7160120be4.png)<br>
+
 
 
 
