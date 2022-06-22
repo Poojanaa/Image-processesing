@@ -108,6 +108,16 @@ cv2.destroyAllWindows()<br>
 ![image](https://user-images.githubusercontent.com/98141711/174049224-7db64b2a-9ab9-4a82-8c81-f9ee5dc06d6e.png)<br>
 ![image](https://user-images.githubusercontent.com/98141711/174049512-edb8ca08-503d-4e4f-bd32-c0cb98f6311f.png)<br>
 <br>
+**10.Develop a program to readimage using URL.**<br>
+import urllib.request<br>
+from PIL import Image<br>
+urllib.request.urlretrieve('https://d1whtlypfis84e.cloudfront.net/guides/wp-content/uploads/2019/08/03091106/Trees-1024x682.jpg',"Tree.jpg")<br>
+img = Image.open("Tree.jpg")<br>
+img.show()<br>
+**Output:-**<br>
+
+**11.Write a program to mask and blur the image.**<br>
+
 
 
 
