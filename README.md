@@ -139,6 +139,9 @@ plt.imshow(result)<br>
 plt.show()<br>
 **Output:-**<br>
 ![image](https://user-images.githubusercontent.com/98141711/175018505-dcee9d3c-ac53-4fc8-a079-f455e24206ad.png)<br>
+blur=cv2.GaussianBlur(final_result,(7, 7), 0) 
+plt.imshow(blur) 
+plt.show()
 
 
 
