@@ -169,6 +169,33 @@ plt.show()<br>
 ![image](https://user-images.githubusercontent.com/98141711/175260401-2dfe2cd1-727f-4229-8079-94689db11520.png)<br>
 <br>
 **12.Write a program to perform arithmatic operations on images.**<br>
+import cv2<br>
+import matplotlib.image as mpimg<br>
+import matplotlib.pyplot as plt<br>
+img1=cv2.imread('leaf3.jpg')<br>
+img2=cv2.imread('leaf6.jpg')<br>
+fimg1=img1+img2<br>
+plt.imshow(fimg1)<br>
+plt.show()<br>
+cv2.imwrite('output.jpg',fimg1)<br>
+fimg2=img1-img2<br>
+plt.imshow(fimg2)<br>
+plt.show()<br>
+cv2.imwrite('output.jpg',fimg2)<br>
+fimg3=img1*img2<br>
+plt.imshow(fimg3)<br>
+plt.show()<br>
+cv2.imwrite('output.jpg',fimg3)<br>
+fimg4=img1/img2<br>
+plt.imshow(fimg4)<br>
+plt.show()<br>
+cv2.imwrite('output.jpg',fimg4)<br>
+**Output**<br>
+![image](https://user-images.githubusercontent.com/98141711/175270013-2fa145b6-b5ca-44e1-830e-d6ebedc02faf.png)<br>
+![image](https://user-images.githubusercontent.com/98141711/175270236-6f5c7ee9-dd44-4478-b394-3525654436b6.png)<br>
+**13.Develop the program to change the image in different color spaces.**<br>
+
+
 
 
 
