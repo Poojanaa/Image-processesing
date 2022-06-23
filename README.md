@@ -210,9 +210,10 @@ cv2.waitKey(0)<br>
 cv2.destroyAllWindows()<br>
 **Output:-**<br>
 ![image](https://user-images.githubusercontent.com/98141711/175274879-692affe2-af1d-4084-aa19-707d646feb93.png)<br>
-
-
-
+![image](https://user-images.githubusercontent.com/98141711/175275062-20b6b363-555d-4cb9-a11a-f8a556a1cdd3.png)<br>
+![image](https://user-images.githubusercontent.com/98141711/175275111-ac91cd47-6938-4cb1-a34b-caccf14f5635.png)<br>
+![image](https://user-images.githubusercontent.com/98141711/175275150-ed0523f7-2697-4c4c-b3a1-9865f95f57bc.png)<br>
+![image](https://user-images.githubusercontent.com/98141711/175275219-7b0cd1af-915d-4ff8-96b5-7898ef2eeaae.png)<br>
 **14**
 
 
