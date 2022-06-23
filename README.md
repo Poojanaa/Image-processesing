@@ -138,10 +138,39 @@ plt.subplot(1,2,2)<br>
 plt.imshow(result)<br>
 plt.show()<br>
 **Output:-**<br>
-![image](https://user-images.githubusercontent.com/98141711/175018505-dcee9d3c-ac53-4fc8-a079-f455e24206ad.png)<br>
+![image](https://user-images.githubusercontent.com/98141711/175258334-f672a6ef-8387-4138-ade8-409a036baf30.png)<br>
+<br>
+light_white=(0,0,200)<br>
+dark_white=(145,60,255)<br>
+mask_white=cv2.inRange(hsv_img,light_white,dark_white)<br>
+result_white=cv2.bitwise_and(img,img,mask=mask_white)<br>
+plt.subplot(1,2,1)<br>
+plt.imshow(mask_white,cmap="gray")<br>
+plt.subplot(1,2,2)<br>
+plt.imshow(result_white)<br>
+plt.show()<br>
+**Output:-**<br>
+![image](https://user-images.githubusercontent.com/98141711/175259588-fabf8a05-894e-4713-9d3d-ebc5596d404c.png)<br>
+<br>
+final_mask=mask + mask_white<br>
+final_result = cv2.bitwise_and (img, img, mask=final_mask)<br>
+plt.subplot(1, 2, 1)<br>
+plt.imshow(final_mask, cmap="gray")<br>
+plt.subplot(1, 2, 2)<br>
+plt.imshow(final_result)<br>
+plt.show()<br>
+**Output:-**<br>
+![image](https://user-images.githubusercontent.com/98141711/175260067-e65ce218-cff3-4d8d-91eb-0a7722a758e6.png)<br>
+<br>
 blur=cv2.GaussianBlur(final_result,(7, 7), 0)<br>
 plt.imshow(blur)<br>
 plt.show()<br>
+**Output:-**<br>
+![image](https://user-images.githubusercontent.com/98141711/175260401-2dfe2cd1-727f-4229-8079-94689db11520.png)<br>
+<br>
+**12.Write a program to perform arithmatic operations on images.**<br>
+
+
 
 
 
