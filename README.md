@@ -194,6 +194,27 @@ cv2.imwrite('output.jpg',fimg4)<br>
 ![image](https://user-images.githubusercontent.com/98141711/175270013-2fa145b6-b5ca-44e1-830e-d6ebedc02faf.png)<br>
 ![image](https://user-images.githubusercontent.com/98141711/175270236-6f5c7ee9-dd44-4478-b394-3525654436b6.png)<br>
 **13.Develop the program to change the image in different color spaces.**<br>
+import cv2 <br>
+img=cv2.imread("plants4.jpg")<br>
+gray=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)<br>
+hsv=cv2.cvtColor(img,cv2.COLOR_BGR2HSV)<br>
+lab=cv2.cvtColor(img,cv2.COLOR_BGR2LAB)<br>
+hls=cv2.cvtColor(img,cv2.COLOR_BGR2HLS)<br>
+yuv=cv2.cvtColor(img,cv2.COLOR_BGR2YUV)<br>
+cv2.imshow("GRAY image",gray)<br>
+cv2.imshow("HSV image",hsv)<br>
+cv2.imshow("LAB image",lab)<br>
+cv2.imshow("HLS image",hls)<br>
+cv2.imshow("YUV image",yuv)<br>
+cv2.waitKey(0)<br>
+cv2.destroyAllWindows()<br>
+**Output:-**<br>
+![image](https://user-images.githubusercontent.com/98141711/175274879-692affe2-af1d-4084-aa19-707d646feb93.png)<br>
+
+
+
+**14**
+
 
 
 
