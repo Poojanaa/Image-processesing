@@ -228,6 +228,36 @@ c.waitKey(0)<br>
 **Output:-**<br>
 ![image](https://user-images.githubusercontent.com/98141711/175276586-ca3e5d9f-06e8-4cbe-a85d-fa2a195ffa30.png)<br>
 <br>
+**15.Program to create and image using bitwise opertaions.**<br>
+import cv2<br>
+import matplotlib.pyplot as plt<br>
+image1=cv2.imread('image1.jpg')<br>
+image2=cv2.imread('image1.jpg')<br>
+ax=plt.subplots(figsize=(15,10))<br>
+bitwiseAnd=cv2.bitwise_and(image1,image2)<br>
+bitwiseOr= cv2.bitwise_or(image1,image2)<br>
+bitwiseXor=cv2.bitwise_xor(image1,image2)<br>
+bitwiseNot_img1=cv2.bitwise_not(image1)<br>
+bitwiseNot_img2=cv2.bitwise_not(image2)<br>
+plt.subplot(151)<br>
+plt.imshow(bitwiseAnd)<br>
+plt.subplot(152)<br>
+plt.imshow(bitwiseOr)<br>
+plt.subplot(153)<br>
+plt.imshow(bitwiseXor)<br>
+plt.subplot(154)<br>
+plt.imshow(bitwiseNot_img1)<br>
+plt.subplot(155)<br>
+plt.imshow(bitwiseNot_img2)<br>
+cv2.waitKey(0)<br>
+<br>
+**Output:-**<br>
+![image](https://user-images.githubusercontent.com/98141711/176403907-f51e33c7-f921-4de5-9a1e-3d1057f6a035.png)<br>
+<br>
+<br>
+
+
+
 
 
 
