@@ -373,7 +373,28 @@ plt.imshow(equ,'gray')<br>
 plt.show()<br>
 **OUTPUT:-**<br>
 ![image](https://user-images.githubusercontent.com/98141711/178706628-3ae4d6ea-27ec-4c69-bfa9-c6693a67efb2.png)<br>
-**21.**
+<br>
+**21.DEVELOP A PROGRAM TO Graylevel slicing without background**<br>
+import cv2<br>
+import numpy as np<br>
+from matplotlib import pyplot as plt<br>
+image=cv2.imread('image1.jpg',0)<br>
+x,y=image.shape<br>
+z=np.zeros((x,y))<br>
+for i in range(0,x):<br>
+    for j in range(0,y):<br>
+        if(image[i][j]>50 and image[i][j]<150):<br>
+            z[i][j]=255<br>
+        else:<br>
+            z[i][j]=0<br>
+equ=np.hstack((image,z))<br>
+plt.title('Graylevel slicing w/o backgraound')<br>
+plt.imshow(equ,'gray')<br>
+plt.show()<br>
+**OUTPUT:-**<br>
+![image](https://user-images.githubusercontent.com/98141711/178710213-195b5492-86a5-40f6-a33b-7be82ca01c2a.png)<br>
+<br>
+
 
 
 
