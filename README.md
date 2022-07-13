@@ -334,6 +334,12 @@ cv2.waitKey(0)<br>
 **Output:-**<br>
 ![image](https://user-images.githubusercontent.com/98141711/176423771-442770eb-5da3-489f-9a32-1e49bee5ce0c.png)<br>
 <br>
+**19. Develop a program to**<br>
+(1) Read the image,<br>
+(ii) write (save) the grayscale image and<br>
+(iii) display the original image and grayscale image<br>
+(Note: To save image to local storage using Python, we use cv2.imwrite() function on<br>
+OpenCV library)<br>
 
 
 
