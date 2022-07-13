@@ -350,10 +350,34 @@ cv2.waitKey(0)<br>
 cv2.destroyAllWindows()<br>
 if isSaved:print('The image is successfully saved.')<br>
 **OUTPUT:-**<br>
+The image is successfully saved.<br>
 ![image](https://user-images.githubusercontent.com/98141711/178700548-5184d941-bad8-430f-8ccd-4e815be9db23.png)<br>
 ![image](https://user-images.githubusercontent.com/98141711/178701129-12e15d82-118c-4593-bff7-7408ea9095bb.png)<br>
 <br>
-**20.**
+**20.DEVELOP A PROGRAM TO Graylevel slicing with background**<br>
+import cv2<br>
+import numpy as np<br>
+from matplotlib import pyplot as plt<br>
+image=cv2.imread('image1.jpg',0)<br>
+x,y=image.shape<br>
+z=np.zeros((x,y))<br>
+for i in range(0,x):<br>
+    for j in range(0,y):<br>
+        if(image[i][j]>50 and image[i][j]<150):<br>
+            z[i][j]=255<br>
+        else:<br>
+            z[i][j]=image[i][j]<br>
+equ=np.hstack((image,z))<br>
+plt.title('Graylevel slicing with background')<br>
+plt.imshow(equ,'gray')<br>
+plt.show()<br>
+**OUTPUT:-**<br>
+![image](https://user-images.githubusercontent.com/98141711/178706628-3ae4d6ea-27ec-4c69-bfa9-c6693a67efb2.png)<br>
+**21.**
+
+
+
+
 
 
 
