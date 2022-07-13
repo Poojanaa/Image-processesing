@@ -340,6 +340,22 @@ cv2.waitKey(0)<br>
 (iii) display the original image and grayscale image<br>
 (Note: To save image to local storage using Python, we use cv2.imwrite() function on<br>
 OpenCV library)<br>
+import cv2<br>
+OriginalImg=cv2.imread('image1.jpg')<br>
+GrayImg=cv2.imread('image1.jpg',0)<br>
+isSaved=cv2.imwrite('D:\image1.jpg', GrayImg)<br>
+cv2.imshow('Display Original Image',OriginalImg)<br>
+cv2.imshow('Display Grayscale Image', GrayImg)<br>
+cv2.waitKey(0)<br>
+cv2.destroyAllWindows()<br>
+if isSaved:print('The image is successfully saved.')<br>
+**OUTPUT:-**<br>
+![image](https://user-images.githubusercontent.com/98141711/178700548-5184d941-bad8-430f-8ccd-4e815be9db23.png)<br>
+![image](https://user-images.githubusercontent.com/98141711/178701129-12e15d82-118c-4593-bff7-7408ea9095bb.png)<br>
+<br>
+**20.**
+
+
 
 
 
