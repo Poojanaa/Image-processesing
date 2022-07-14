@@ -438,6 +438,20 @@ plt.show()<br>
 <br>
 <br>
 **25.DEVELOP A PROGRAM TO HISTOGRAM THE IMAGE USING PILLOW.**<br>
+from PIL import Image
+ img = Image.open(r"C:\Users\ADMIN\Desktop\1st Msc\images\moon.jpeg")<br>
+r, g, b = img.split()<br>
+len(r.histogram())<br>
+r.histogram()<br>
+<br>
+**OUTPUT:-**<br>
+![image](https://user-images.githubusercontent.com/98141711/178965513-b0749b39-3c84-47d8-a492-c49e43fd1b06.png)<br>
+<br>
+<br>
+
+
+
+    
 
 
 
