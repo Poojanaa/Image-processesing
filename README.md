@@ -394,6 +394,54 @@ plt.show()<br>
 **OUTPUT:-**<br>
 ![image](https://user-images.githubusercontent.com/98141711/178710213-195b5492-86a5-40f6-a33b-7be82ca01c2a.png)<br>
 <br>
+**22. DEVELOP A PROGRAM TO HISTOGRAM THE IMAGE USING SKIPY**<br>
+from skimage import io<br>
+import matplotlib.pyplot as plt<br>
+image = io.imread('moon.jpeg')<br>
+_ = plt.hist(image.ravel(), bins = 256, color = 'orange', )<br>
+_ = plt.hist(image[:, :, 0].ravel(), bins = 256, color = 'red', alpha = 0.5)<br>
+_ = plt.hist(image[:, :, 1].ravel(), bins = 256, color = 'Green', alpha = 0.5)<br>
+_ = plt.hist(image[:, :, 2].ravel(), bins = 256, color = 'Blue', alpha = 0.5)<br>
+_ = plt.xlabel('Intensity Value')<br>
+_ = plt.ylabel('Count')<br>
+_ = plt.legend(['Total', 'Red_Channel', 'Green_Channel', 'Blue_Channel'])<br>
+plt.show()<br>
+<br>
+**OUTPUT:-**<br>
+![image](https://user-images.githubusercontent.com/98141711/178953279-bf2e3f77-1309-43e3-9906-2d61a236b215.png)<br>
+<br>
+<br>
+**23. DEVELOP A PROGRAM TO HISTOGRAM THE IMAGE USING open cv2.**<br>
+import cv2 <br>
+from matplotlib import pyplot as plt  <br>
+img = cv2.imread('moon.jpeg',0) <br>
+histr = cv2.calcHist([img],[0],None,[256],[0,256]) <br>
+plt.plot(histr) <br>
+plt.show()<br>
+<br>
+**OUTPUT:-**<br>
+![image](https://user-images.githubusercontent.com/98141711/178956801-c9ba73d7-3c40-4983-bdfd-fb4366397acc.png)<br>
+<br>
+**24.DEVELOP A PROGRAM TO HISTOGRAM THE IMAGE USING NUMPY.**<br>
+import numpy as np<br>
+import cv2 as cv<br>
+from matplotlib import pyplot as plt<br>
+img = cv.imread('moon.jpeg')<br>
+plt.imshow(img)<br>
+plt.show()<br>
+img = cv.imread('moon.jpeg',0)<br>
+plt.hist(img.ravel(),256,[0,256]);<br>
+plt.show()<br>
+<br>
+**OUTPUT:-**<br>
+![image](https://user-images.githubusercontent.com/98141711/178958007-611122d8-f419-4af9-bf07-ff7d8a0babbf.png)<br>
+<br>
+<br>
+**25.DEVELOP A PROGRAM TO HISTOGRAM THE IMAGE USING PILLOW.**<br>
+
+
+
+
 
 
 
