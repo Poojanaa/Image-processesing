@@ -494,7 +494,7 @@ plt.axis('off');<br>
 d)<br>
 import imageio<br>
 import matplotlib.pyplot as plt<br>
-#Gamma encoding<br>
+# Gamma encoding<br>
 pic=imageio.imread('bird.jpg') <br>
 gamma=2.2# Gamma < 1 Dark; Gamma > 1~ Bright<br>
 gamma_correction=((pic/255)**(1/gamma)) <br>
@@ -510,15 +510,15 @@ plt.axis('off');<br>
 **b)Flipping**<br>
 **c)Cropping**<br>
 a)<br>
-#Image sharpen<br>
+# Image sharpen<br>
 from PIL import Image<br>
 from PIL import ImageFilter<br>
 import matplotlib.pyplot as plt<br>
-#Load the image<br>
+# Load the image<br>
 my_image=Image.open('teddy.jpg')<br>
-#Use sharpen function<br>
+# Use sharpen function<br>
 sharp=my_image.filter(ImageFilter.SHARPEN)<br>
-#Save the image<br>
+# Save the image<br>
 sharp.save('D:/image_sharpen.jpg')<br>
 sharp.show()<br>
 plt.imshow(sharp)<br>
@@ -529,13 +529,13 @@ plt.show()<br>
 <br>
 b)<br>
 import matplotlib.pyplot as plt<br>
-#Load the image<br>
+# Load the image<br>
 img =Image.open('teddy.jpg')<br>
 plt.imshow(img)<br>
 plt.show()<br>
-#use the flip function<br>
+# use the flip function<br>
 flip=img.transpose (Image.FLIP_LEFT_RIGHT)<br>
-#save the image<br>
+# save the image<br>
 flip.save('D:/image_flip.jpg')<br>
 plt.imshow(flip)<br>
 plt.show()<br>
