@@ -571,6 +571,67 @@ print(img)<br>
 ![image](https://user-images.githubusercontent.com/98141711/180191181-cc3ac009-6deb-411f-8a0f-bb155abd9c42.png)<br>
 ![image](https://user-images.githubusercontent.com/98141711/180191269-fcc1e6c7-f8ed-4d57-aa95-c293c1393974.png)<br>
 <br>
+**29.**<br>
+import numpy as np<br>
+import matplotlib.pyplot as plt<br>
+arr = np.zeros((256,256,3), dtype=np.uint8)<br>
+imgsize = arr.shape[:2]<br>
+innerColor = (255, 255, 255)<br>
+outerColor = (0,0,0)<br>
+for y in range(imgsize[1]):<br>
+    for x in range(imgsize[0]):<br>
+        distanceToCenter = np.sqrt((x - imgsize[0]//2) ** 2 + (y - imgsize[1]//2) ** 2)<br>
+        distanceToCenter = distanceToCenter / (np.sqrt(2) * imgsize[0]/2)<br>
+        r = outerColor[0] * distanceToCenter + innerColor[0] * (1 - distanceToCenter)<br>
+        g = outerColor[1] * distanceToCenter + innerColor[1] * (1 - distanceToCenter)<br>
+        b = outerColor[2] * distanceToCenter + innerColor[2] * (1 - distanceToCenter)<br>
+        arr[y, x] = (int(r), int(g), int(b))<br>
+        plt.imshow(arr, cmap='gray')<br>
+        plt.show()<br>
+ <br>
+**Output:-**<br>
+![image](https://user-images.githubusercontent.com/98141711/180199036-65a6fa89-d817-4295-b4e7-f158ec5f7311.png)<br>
+<br>
+**30.**<br>
+from PIL import Image<br>
+import numpy as np<br>
+w, h = 512, 512<br>
+data = np.zeros((h, w, 3), dtype=np.uint8)<br>
+data[0:100, 0:100] = [255, 0, 0]<br>
+data[100:200, 100:200] = [255, 0, 255]<br>
+data[200:300, 200:300] = [0, 255, 0]<br>
+# red patch in upper left<br>
+img = Image.fromarray(data, 'RGB')<br>
+img.save('my.png')<br>
+plt.imshow(img)<br>
+plt.show()<br>
+<br>
+**Output:-**<br>
+![image](https://user-images.githubusercontent.com/98141711/180200493-6c5de916-8cf8-42bf-8827-2cf129b93945.png)<br>
+<br>
+<br>
+<br>
+<br>
+from PIL import Image<br>
+import numpy as np<br>
+w, h = 600, 600<br>
+data = np.zeros((h, w, 3), dtype=np.uint8)<br>
+data[0:100, 0:100] = [255, 0, 0]<br>
+data[100:200, 100:200] = [255, 0, 255]<br>
+data[200:300, 200:300] = [0, 255, 0]<br>
+data[300:400,300:400]=[0,0,255]<br>
+data[400:500,400:500]=[255,255,0]<br>
+data[500:600,500:600]=[0,255,255]<br>
+# red patch in upper left<br>
+img = Image.fromarray(data, 'RGB')<br>
+img.save('my.png')<br>
+plt.imshow(img)<br>
+plt.show()<br>
+<br>
+
+ 
+       
+
 
 
 
