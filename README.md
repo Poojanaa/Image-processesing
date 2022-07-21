@@ -448,6 +448,12 @@ r.histogram()<br>
 ![image](https://user-images.githubusercontent.com/98141711/178965513-b0749b39-3c84-47d8-a492-c49e43fd1b06.png)<br>
 <br>
 <br>
+**26.Program to perform basic image data analysis using intensity transformation.**<br>
+**a) Image negative<br>**
+**b)Log transformation<br>**
+**c)Gramma correction<br>**
+
+
 
 
 
