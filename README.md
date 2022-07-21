@@ -561,6 +561,19 @@ plt.show()<br>
 **Output:-**<br>
 ![image](https://user-images.githubusercontent.com/98141711/180189374-263fcb31-411e-4c97-8118-2da1f99d7c71.png)<br>
 <br>
+**28.Generate matrix and display the image data.**<br>
+import matplotlib.image as image<br>
+img=image.imread('teddy.jpg')<br>
+print('The Shape of the image is:',img.shape)<br>
+print('The image as array is:')<br>
+print(img)<br>
+**Output:-**<br>
+![image](https://user-images.githubusercontent.com/98141711/180191181-cc3ac009-6deb-411f-8a0f-bb155abd9c42.png)<br>
+![image](https://user-images.githubusercontent.com/98141711/180191269-fcc1e6c7-f8ed-4d57-aa95-c293c1393974.png)<br>
+<br>
+
+
+
 
 
 
