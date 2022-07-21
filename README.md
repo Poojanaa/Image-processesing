@@ -452,6 +452,23 @@ r.histogram()<br>
 **a) Image negative<br>**
 **b)Log transformation<br>**
 **c)Gramma correction<br>**
+a)<br>
+%matplotlib inline<br>
+import imageio<br>
+import matplotlib.pyplot as plt<br>
+import warnings<br>
+import matplotlib.cbook<br>
+warnings.filterwarnings("ignore", category=matplotlib.cbook.mplDeprecation)<br>
+pic=imageio.imread('bird.jpg')<br>
+plt.figure(figsize=(6,6))<br>
+plt.imshow(pic);<br>
+plt.axis('off');<br>
+**Output:-**<br>
+![image](https://user-images.githubusercontent.com/98141711/180174535-49d4d081-104c-404e-b83a-601e483f4d8b.png)<br>
+<br>
+b)<br>
+
+
 
 
 
