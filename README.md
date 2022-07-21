@@ -467,6 +467,54 @@ plt.axis('off');<br>
 ![image](https://user-images.githubusercontent.com/98141711/180174535-49d4d081-104c-404e-b83a-601e483f4d8b.png)<br>
 <br>
 b)<br>
+negative=255- pic # neg = (L-1) - img<br>
+plt.figure(figsize= (6,6))<br>
+plt.imshow(negative); <br>
+plt.axis('off');<br>
+**Output:-**<br>
+![image](https://user-images.githubusercontent.com/98141711/180175209-7a5fe07d-283d-46bf-bfcd-fe368376a0c3.png)<br>
+<br>
+c)<br>
+%matplotlib inline<br>
+import imageio<br>
+import numpy as np<br> 
+import matplotlib.pyplot as plt<br>
+pic=imageio.imread("bird.jpg")<br>
+gray=lambda rgb : np.dot(rgb[...,:3], [0.299,0.587,0.114]) <br>
+gray=gray(pic)<br>
+max_=np.max(gray)<br>
+def log_transform():<br>
+    return(255/np.log(1+max_))*np.log(1+gray)<br>
+plt.figure(figsize=(5,5))<br>
+plt.imshow(log_transform(), cmap=plt.get_cmap(name='gray'))<br>
+plt.axis('off');<br>
+**Output:-**<br>
+![image](https://user-images.githubusercontent.com/98141711/180180867-15b75d7a-24b7-43bf-bba9-a950a2d4174a.png)<br>
+<br>
+d)<br>
+import imageio<br>
+import matplotlib.pyplot as plt<br>
+#Gamma encoding<br>
+pic=imageio.imread('bird.jpg') <br>
+gamma=2.2# Gamma < 1 Dark; Gamma > 1~ Bright<br>
+gamma_correction=((pic/255)**(1/gamma)) <br>
+plt.figure(figsize=(5,5)) <br>
+plt.imshow(gamma_correction)<br>
+plt.axis('off');<br>
+<br>
+**Output:-**<br>
+![image](https://user-images.githubusercontent.com/98141711/180181653-6fcfa572-adce-4fd6-850a-7e96b0011d05.png)<br>
+<br>
+**27.Program to perform basic image manipulation**<br>
+**a)Sharpness**<br>
+**b)Flipping**<br>
+**c)Cropping**<br>
+a)<br>
+
+
+
+
+
 
 
 
