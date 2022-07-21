@@ -510,6 +510,60 @@ plt.axis('off');<br>
 **b)Flipping**<br>
 **c)Cropping**<br>
 a)<br>
+#Image sharpen<br>
+from PIL import Image<br>
+from PIL import ImageFilter<br>
+import matplotlib.pyplot as plt<br>
+#Load the image<br>
+my_image=Image.open('teddy.jpg')<br>
+#Use sharpen function<br>
+sharp=my_image.filter(ImageFilter.SHARPEN)<br>
+#Save the image<br>
+sharp.save('D:/image_sharpen.jpg')<br>
+sharp.show()<br>
+plt.imshow(sharp)<br>
+plt.show()<br>
+**Output:-**<br>
+![image](https://user-images.githubusercontent.com/98141711/180184934-a5cb7f63-639f-479d-8879-5a1e25663e62.png)<br>
+![image](https://user-images.githubusercontent.com/98141711/180184477-1229f701-0c28-4e94-8aa3-99ab5bdcac07.png)<br>
+<br>
+b)<br>
+import matplotlib.pyplot as plt<br>
+#Load the image<br>
+img =Image.open('teddy.jpg')<br>
+plt.imshow(img)<br>
+plt.show()<br>
+#use the flip function<br>
+flip=img.transpose (Image.FLIP_LEFT_RIGHT)<br>
+#save the image<br>
+flip.save('D:/image_flip.jpg')<br>
+plt.imshow(flip)<br>
+plt.show()<br>
+**Output:-**<br>
+![image](https://user-images.githubusercontent.com/98141711/180186015-ce11f704-9a6f-456c-b963-8b78e2c0059a.png)<br>
+<br>
+c)<br>
+# Importing Image class <br>
+from PIL import Image<br>
+import matplotlib.pyplot as plt <br>
+# Opens a image in RGB mode<br>
+im = Image.open('teddy.jpg')<br>
+#Size of the image in pixels (size of original image)<br>
+#(This is not mandatory) <br>
+width, height = im.size<br>
+# Cropped image of above dimension<br>
+# (It will not change original image) <br>
+im1= im.crop ((280,100, 800, 600))<br>
+# Shows the image in image viewer<br>
+im1.show()<br>
+plt.imshow(im1)<br>
+plt.show()<br>
+**Output:-**<br>
+![image](https://user-images.githubusercontent.com/98141711/180189374-263fcb31-411e-4c97-8118-2da1f99d7c71.png)<br>
+<br>
+
+
+
 
 
 
