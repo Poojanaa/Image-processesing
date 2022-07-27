@@ -523,6 +523,7 @@ sharp.save('D:/image_sharpen.jpg')<br>
 sharp.show()<br>
 plt.imshow(sharp)<br>
 plt.show()<br>
+<br>
 **Output:-**<br>
 ![image](https://user-images.githubusercontent.com/98141711/180184934-a5cb7f63-639f-479d-8879-5a1e25663e62.png)<br>
 ![image](https://user-images.githubusercontent.com/98141711/180184477-1229f701-0c28-4e94-8aa3-99ab5bdcac07.png)<br>
@@ -571,7 +572,7 @@ print(img)<br>
 ![image](https://user-images.githubusercontent.com/98141711/180191181-cc3ac009-6deb-411f-8a0f-bb155abd9c42.png)<br>
 ![image](https://user-images.githubusercontent.com/98141711/180191269-fcc1e6c7-f8ed-4d57-aa95-c293c1393974.png)<br>
 <br>
-**29.**<br>
+**29.program to find the brightness of a image from distance to center.**<br>
 import numpy as np<br>
 import matplotlib.pyplot as plt<br>
 arr = np.zeros((256,256,3), dtype=np.uint8)<br>
@@ -592,7 +593,7 @@ for y in range(imgsize[1]):<br>
 **Output:-**<br>
 ![image](https://user-images.githubusercontent.com/98141711/180199036-65a6fa89-d817-4295-b4e7-f158ec5f7311.png)<br>
 <br>
-**30.**<br>
+**30.program to display the different color in diagonal with matrix.**<br>
 from PIL import Image<br>
 import numpy as np<br>
 w, h = 512, 512<br>
@@ -628,6 +629,8 @@ img.save('my.png')<br>
 plt.imshow(img)<br>
 plt.show()<br>
 <br>
+**31.Read an image to find max,min,average and standard deviation of pixel value.**<br>
+
 
  
        
