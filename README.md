@@ -630,6 +630,79 @@ plt.imshow(img)<br>
 plt.show()<br>
 <br>
 **31.Read an image to find max,min,average and standard deviation of pixel value.**<br>
+# example of pixel normalization<br>
+from numpy import asarray<br>
+from PIL import Image<br>
+# load image<br>
+image = Image.open('bird.jpg')<br>
+pixels = asarray(image)<br>
+# confirm pixel range is 0-255<br>
+#print('Data Type: %s' % pixels.dtype)<br>
+print('Min: %.3f, Max: %.3f' % (pixels.min(), pixels.max()))<br>
+# convert from integers to floats<br>
+pixels = pixels.astype('float32')<br>
+# normalize to the range 0-1<br>
+pixels /= 255.0<br>
+# confirm the normalization<br>
+print('Min: %.3f, Max: %.3f' % (pixels.min(), pixels.max()))<br>
+<br>
+**output:-**<br>
+Min: 0.000, Max: 255.000<br>
+Min: 0.000, Max: 1.000<br>
+<br>
+**Average**<br>
+import cv2<br>
+import numpy as np<br>
+import matplotlib.pyplot as plt<br>
+img=cv2.imread("bird.jpg",0)<br>
+img=cv2.cvtColor(img,cv2.COLOR_BGR2RGB)<br>
+plt.imshow(img)<br>
+np.average(img)<br>
+<br>
+**Output:-**<br>
+![image](https://user-images.githubusercontent.com/98141711/181432990-7bbd99c2-054f-4555-9c12-cb35be2100d0.png)<br>
+**Standard deviation**<br>
+from PIL import Image,ImageStat<br>
+import matplotlib.pyplot as plt<br>
+im=Image.open('bird.jpg')<br>
+plt.imshow(im)<br>
+plt.show()<br>
+stat=ImageStat.Stat(im)<br>
+print(stat.stddev)<br>
+<br>
+**Output:-**<br>
+![image](https://user-images.githubusercontent.com/98141711/181433890-08698c2c-c54b-47dd-9449-9eef70b80108.png)<br>
+**Max**<br>
+import cv2<br>
+import numpy as np<br>
+import matplotlib.pyplot as plt<br>
+img=cv2.imread('bird.jpg' )<br>
+plt.imshow(img)<br>
+plt.show()<br>
+max_channels = np.amax([np.amax(img[:,:,0]), np.amax(img[:,:,1]),np.amax(img[:,:,2])])<br>
+print(max_channels)<br>
+<br>
+**Output:-**<br>
+![image](https://user-images.githubusercontent.com/98141711/181434482-85de3612-aa2f-45e6-a72c-590a4ad2a281.png)<br>
+**Min**<br>
+import cv2<br>
+import numpy as np<br>
+import matplotlib.pyplot as plt<br>
+img=cv2.imread('bird.jpg' )<br>
+plt.imshow(img)<br>
+plt.show()<br>
+min_channels = np.amin([np.min(img[:,:,0]), np.amin(img[:,:,1]),np.amin(img[:,:,2])])<br>
+print(min_channels)<br>
+<br>
+**Output:-**<br>
+![image](https://user-images.githubusercontent.com/98141711/181435167-c3ccc1e9-189c-460b-9a57-71ecc17e420f.png)<br>
+<br>
+
+
+
+
+
+
 
 
  
