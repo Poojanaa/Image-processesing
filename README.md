@@ -743,7 +743,31 @@ edges = filters.sobel(image)<br>
 plt.imshow(edges, cmap='gray')<br>
 **Output:-**<br>
 ![image](https://user-images.githubusercontent.com/98141711/186399881-ed6fb19a-8843-4571-abd2-fd5a841c3195.png)<br>
-**34.**<br>
+**34.Basic pillow functions.**<br>
+from PIL import Image,ImageChops,ImageFilter<br>
+from matplotlib import pyplot as plt<br>
+x=Image.open("x.png")<br>
+o=Image.open("o.png")<br>
+print('size of the image:',x.size,'colour mode:',x.mode)<br>
+print('size of the image:',o.size,'colour mode:',o.mode)<br>
+plt.subplot(121),plt.imshow(x)<br>
+plt.axis('off')<br>
+plt.subplot(122),plt.imshow(o)<br>
+plt.axis('off')<br>
+merged=ImageChops.multiply(x,o)<br>
+add=ImageChops.add(x,o)<br>
+greyscale=merged.convert('L')<br>
+greyscale<br>
+<br>
+**Output:-**<br>
+size of the image: (256, 256) colour mode: RGB<br>
+size of the image: (256, 256) colour mode: RGB<br>
+![image](https://user-images.githubusercontent.com/98141711/186625069-e9ed4862-7a76-496c-b67d-8ec4d9f961ef.png)<br>
+<br>
+**35.basic pillow functions.**<br>
+
+
+
 
 
 
