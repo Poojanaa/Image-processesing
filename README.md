@@ -764,7 +764,53 @@ size of the image: (256, 256) colour mode: RGB<br>
 size of the image: (256, 256) colour mode: RGB<br>
 ![image](https://user-images.githubusercontent.com/98141711/186625069-e9ed4862-7a76-496c-b67d-8ec4d9f961ef.png)<br>
 <br>
-**35.basic pillow functions.**<br>
+image=merged<br>
+print('image size:',image.size,<br>
+     '\ncolor mode:',image.mode,<br>
+      '\nimage width:',image.width,'\also represented by:',image.size[0],<br>
+      '\nimage height:',image.height,'\also represented by:',image.size[1],)<br>
+<br>
+**Output:-**<br>
+![image](https://user-images.githubusercontent.com/98141711/186627311-2121de02-7914-4874-a113-a51ae86357b3.png)<br>
+<br>
+pixel=greyscale.load()<br>
+for row in range(greyscale.size[0]):<br>
+    for column in range(greyscale.size[1]):<br>
+        if pixel[row,column]!=(255):<br>
+         pixel[row,column]=(0)<br>
+        <br>
+greyscale<br>
+<br>
+**Output:-**<br>
+![image](https://user-images.githubusercontent.com/98141711/186633228-5cf7ad99-0598-49f0-b0bd-0f6fa0e41d6e.png)<br>
+<br>
+invert=ImageChops.invert(greyscale)<br>
+bg=Image.new('L',(255,256),color=(255))<br>
+subt=ImageChops.subtract(bg,greyscale)<br>
+rotate=subt.rotate(45)<br>
+rotate<br>
+<br>
+**Output:-**<br>
+![image](https://user-images.githubusercontent.com/98141711/186630051-e87fea3c-b913-49b4-b9cd-9bf6ff54b6a1.png)<br>
+<br>
+blur=greyscale.filter(ImageFilter.GaussianBlur(radius=1))<br>
+edge=blur.filter(ImageFilter.FIND_EDGES)<br>
+edge<br>
+<br>
+**Output:-**<br>
+![image](https://user-images.githubusercontent.com/98141711/186630933-9dab7218-591f-4700-9859-4d29df070062.png)<br>
+<br>
+edge=edge.convert('RGB')<br>
+bg_red=Image.new('RGB',(256,256),color=(255,0,0))<br>
+filled_edge=ImageChops.darker(bg_red,edge)<br>
+filled_edge<br>
+<br>
+**Output:-**<br>
+![image](https://user-images.githubusercontent.com/98141711/186631899-84efc81d-9e3f-49dc-aef6-50b9a8ecb449.png)<br>
+<br>
+edge.save('processed.png')<br>
+<br>
+**35. **<br>
 
 
 
