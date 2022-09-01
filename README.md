@@ -812,73 +812,74 @@ edge.save('processed.png')<br>
 <br>
 **35.Image restoration: **<br>
 (a) Restore a damaged image<br>
-import numpy as np
-import cv2
-import matplotlib.pyplot as plt
-img=cv2.imread('img1.png')
-plt.imshow(img)
-plt.show()
-mask=cv2.imread('img2.png',0)
-plt.imshow(mask)
-plt.show()
-dst=cv2.inpaint(img, mask, 3, cv2.INPAINT_TELEA)
-cv2.imwrite('dimage_inpainted.png',dst)
-plt.imshow(dst)
+import numpy as np<br>
+import cv2<br>
+import matplotlib.pyplot as plt<br>
+img=cv2.imread('img1.png')<br>
+plt.imshow(img)<br>
 plt.show()<br>
-**OUTPUT:-**<BR>
+mask=cv2.imread('img2.png',0)<br>
+plt.imshow(mask)<br>
+plt.show()<br>
+dst=cv2.inpaint(img, mask, 3, cv2.INPAINT_TELEA)<br>
+cv2.imwrite('dimage_inpainted.png',dst)<br>
+plt.imshow(dst)<br>
+plt.show()<br><br>
+**OUTPUT:-**<br>
   ![image](https://user-images.githubusercontent.com/98141711/186654955-de13a36b-8e1a-4dbc-8a45-0ee9d2a8eb9c.png)<br>
     ![image](https://user-images.githubusercontent.com/98141711/186655138-a9ec0c1a-7851-4ef6-8b68-a03b30d23738.png)<br>
     (b) Removing Logo’s:<br>
-    import numpy as np
-import matplotlib.pyplot as plt
-import pandas as pd
-from skimage.restoration import inpaint
-from skimage.transform import resize 
-from skimage import color
-plt.rcParams['figure.figsize']=(10,8)
-def show_image(image,title='Image',cmap_type='gray'):
-    plt.imshow(image,cmap=cmap_type)
-    plt.title(title)
-    plt.axis('off')
-def plot_comparison(img_original,img_filtered,img_title_filtered):
-    fig,(ax1,ax2)=plt.subplots(ncols=2,figsize=(10,8),sharex=True,sharey=True)
-    ax1.imshow(img_original,cmap=plt.cm.gray)
-    ax1.set_title('Original')
-    ax1.axis('off')
-    ax2.imshow(img_filtered,cmap=plt.cm.gray)
-    ax2.set_title(img_title_filtered)
-    ax2.axis('off')
-image_with_logo=plt.imread("imlogo.png")
-mask=np.zeros(image_with_logo.shape[:-1])
-mask[210:272, 360:425] = 1
-image_logo_removed=inpaint.inpaint_biharmonic (image_with_logo, mask,multichannel=True)
-plot_comparison (image_with_logo, image_logo_removed, "Image with logo removed")
+    import numpy as np<br>
+import matplotlib.pyplot as plt<br>
+import pandas as pd<br>
+from skimage.restoration import inpaint<br>
+from skimage.transform import resize <br>
+from skimage import color<br>
+plt.rcParams['figure.figsize']=(10,8)<br>
+def show_image(image,title='Image',cmap_type='gray'):<br>
+    plt.imshow(image,cmap=cmap_type)<br>
+    plt.title(title)<br>
+    plt.axis('off')<br>
+def plot_comparison(img_original,img_filtered,img_title_filtered):<br>
+    fig,(ax1,ax2)=plt.subplots(ncols=2,figsize=(10,8),sharex=True,sharey=True)<br>
+    ax1.imshow(img_original,cmap=plt.cm.gray)<br>
+    ax1.set_title('Original')<br>
+    ax1.axis('off')<br>
+    ax2.imshow(img_filtered,cmap=plt.cm.gray)<br>
+    ax2.set_title(img_title_filtered)<br>
+    ax2.axis('off')<br>
+image_with_logo=plt.imread("imlogo.png")<br>
+mask=np.zeros(image_with_logo.shape[:-1])<br>
+mask[210:272, 360:425] = 1<br>
+image_logo_removed=inpaint.inpaint_biharmonic (image_with_logo, mask,multichannel=True)<br>
+plot_comparison (image_with_logo, image_logo_removed, "Image with logo removed")<br>
 **Output:-**<br>
     ![image](https://user-images.githubusercontent.com/98141711/186655366-314c2393-047f-410f-9ab9-948617058533.png)<br>
    **Noise:**<br>
     (a) Adding noise<br>
-    from skimage.util import random_noise
-fruit_image = plt.imread('fruitts.jpeg')
-noisy_image=random_noise (fruit_image)
-plot_comparison (fruit_image, noisy_image, "Noisy image")
+    from skimage.util import random_noise<br>
+fruit_image = plt.imread('fruitts.jpeg')<br>
+noisy_image=random_noise (fruit_image)<br>
+plot_comparison (fruit_image, noisy_image, "Noisy image")<br>
    **Output:-**<br>
     ![image](https://user-images.githubusercontent.com/98141711/186655732-4092c46b-3743-45f4-ac41-5a3bba6811fc.png)<br>
    (b) Reducing Noise<br>
-    from skimage.restoration import denoise_tv_chambolle
-noisy_image = plt.imread('noisy.jpg')
-denoised_image = denoise_tv_chambolle (noisy_image, multichannel=True)
-plot_comparison(noisy_image, denoised_image, 'Denoised Image')
+    from skimage.restoration import denoise_tv_chambolle<br>
+noisy_image = plt.imread('noisy.jpg')<br>
+denoised_image = denoise_tv_chambolle (noisy_image, multichannel=True)<br>
+plot_comparison(noisy_image, denoised_image, 'Denoised Image')<br>
     **Output:-**<br>
     ![image](https://user-images.githubusercontent.com/98141711/186655898-9ff756af-6256-4b2f-aeb8-be79f2b94a7b.png)<br>
     (c) Reducing Noise while preserving edges<br>
-    from skimage.restoration import denoise_bilateral
-landscape_image = plt.imread('noisy.jpg')
-denoised_image=denoise_bilateral (landscape_image, multichannel=True)
-plot_comparison (landscape_image, denoised_image, 'Denoised Image')
+    from skimage.restoration import denoise_bilateral<br>
+landscape_image = plt.imread('noisy.jpg')<br>
+denoised_image=denoise_bilateral (landscape_image, multichannel=True)<br>
+plot_comparison (landscape_image, denoised_image, 'Denoised Image')<br>
     **Output:-**<br>
     ![image](https://user-images.githubusercontent.com/98141711/186656102-2be89ecb-4be4-4429-8973-680908b88e3b.png)<br>
   **Segmentation :**<br>
     (a) Superpixel Segmentation<br>
+    
     
 
     
