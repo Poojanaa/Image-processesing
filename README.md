@@ -879,6 +879,170 @@ plot_comparison (landscape_image, denoised_image, 'Denoised Image')<br>
     ![image](https://user-images.githubusercontent.com/98141711/186656102-2be89ecb-4be4-4429-8973-680908b88e3b.png)<br>
   **Segmentation :**<br>
     (a) Superpixel Segmentation<br>
+    from skimage.segmentation import slic<br>
+from skimage.color import label2rgb<br>
+import matplotlib.pyplot as plt<br>
+import numpy as np<br>
+face_image = plt.imread('face.jpg')<br>
+
+segments = slic (face_image, n_segments=400)<br>
+
+segmented_image = label2rgb(segments, face_image, kind='avg')<br>
+plt.title('Original Image')<br>
+plt.imshow(face_image)<br>
+plt.show()<br>
+plt.title('Segmented Image')<br>
+plt.imshow((segmented_image* 1).astype(np.uint8))<br>
+plt.show()<br>
+**OUTPUT:-**<br>
+![image](https://user-images.githubusercontent.com/98141711/187902142-481d7cda-487c-423d-a1c8-4b2adc4b7e6e.png)<br>
+**Contours:**<br>
+  (a) Contouring shapes<br>
+  def show_image_contour(image,contours):<br>
+    plt.figure()<br>
+    for n,contour in enumerate(contours):<br>
+        plt.plot(contour[:,1],contour[:,0],linewidth=3)<br>
+    plt.imshow(image,interpolation='nearest',cmap='gray_r')<br>
+    plt.title('Contours')<br>
+    plt.axis('off')<br>
+from skimage import measure,data<br>
+horse_image=data.horse()<br>
+contours=measure.find_contours(horse_image,level=0.8)<br>
+show_image_contour(horse_image,contours)<br>
+**OUTPUT:-**<br>
+![image](https://user-images.githubusercontent.com/98141711/187877805-0545d05b-18af-4236-bbfd-22b82508d987.png)<br>
+<br>
+(b) Find contours of an image that is not binary<br>
+from skimage.io import imread<br>
+from skimage.filters import threshold_otsu<br>
+image_dices=imread('diceimg.png')<br>
+image_dices=color.rgb2gray(image_dices)<br>
+thresh=threshold_otsu(image_dices)<br>
+binary=image_dices>thresh<br>
+contours=measure.find_contours(binary,level=0.8)<br>
+show_image_contour(image_dices,contours)<br>
+**OUTPUT:-**<br>
+![image](https://user-images.githubusercontent.com/98141711/187880034-571a85d2-5f95-4aef-99f6-227570cb135a.png)<br>
+(c) Count the dots in a dice's image<br>
+shape_contours = [cnt.shape[0] for cnt in contours]<br>
+max_dots_shape = 50<br>
+dots_contours = [cnt for cnt in contours if np. shape (cnt)[0] < max_dots_shape]<br>
+show_image_contour (binary, contours)<br>
+print('Dices dots number: {}.'.format(len(dots_contours)))<br>
+**OUTPUT:-**<br>
+![image](https://user-images.githubusercontent.com/98141711/187890077-d9b83e35-d65f-46c5-88c2-ef84778245b8.png)<br>
+<br>
+**36.Implement a program to perform various edge detection techniques**<br>
+a) Canny Edge detection<br>
+#Canny Edge detection<br>
+import cv2<br>
+import numpy as np <br>
+import matplotlib.pyplot as plt<br>
+plt.style.use('seaborn')<br>
+loaded_image = cv2.imread("animated.jpeg")<br>
+loaded_image = cv2.cvtColor(loaded_image,cv2.COLOR_BGR2RGB)<br>
+gray_image = cv2.cvtColor(loaded_image,cv2.COLOR_BGR2GRAY)<br>
+edged_image = cv2.Canny(gray_image, threshold1=30, threshold2=100)<br>
+plt.figure(figsize=(20,20))<br>
+plt.subplot(1,3,1)<br>
+plt.imshow(loaded_image,cmap="gray")<br>
+plt.title("original Image")<br>
+plt.axis("off")<br>
+plt.subplot(1,3,2)<br>
+plt.imshow(gray_image, cmap="gray")<br>
+plt.axis("off")<br>
+plt.title("GrayScale Image")<br>
+plt.subplot(1,3,3)<br>
+plt.imshow(edged_image,cmap="gray")<br>
+plt.axis("off")<br>
+plt.title("Canny Edge Detected Image")<br>
+plt.show()<br>
+**OUTPUT:-**<br>
+![image](https://user-images.githubusercontent.com/98141711/187898399-3c66fa2e-2d1b-49bd-9b73-88ce42fdbb28.png)<br>
+<br>
+b) Edge detection schemes - the gradient (Sobel - first order derivatives) based edge detector and the Laplacian (2nd order derivative, so it is extremely sensitive to noise) based edge detector.<br>
+import cv2<br>
+import numpy as np <br>
+from matplotlib import pyplot as plt<br>
+img0=cv2.imread('animated.jpeg',)<br>
+gray= cv2.cvtColor(img0, cv2.COLOR_BGR2GRAY)<br>
+img= cv2.GaussianBlur (gray, (3,3),0)<br>
+laplacian= cv2.Laplacian (img,cv2.CV_64F)<br>
+sobelx = cv2.Sobel (img,cv2.CV_64F,1,0,ksize=5) <br>
+sobely = cv2.Sobel(img,cv2.CV_64F,0,1,ksize=5) <br>
+plt.subplot(2,2,1), plt.imshow(img, cmap = 'gray')<br>
+plt.title('Original'), plt.xticks([]), plt.yticks([])<br>
+plt.subplot(2,2,2), plt.imshow(laplacian,cmap = 'gray') <br>
+plt.title('Laplacian'), plt.xticks([]), plt.yticks([])<br>
+plt.subplot(2,2,3), plt.imshow(sobelx, cmap = 'gray')<br>
+plt.title('Sobel x'), plt.xticks([]), plt.yticks([])<br>
+plt.subplot(2,2,4), plt.imshow(sobely,cmap = 'gray')<br>
+plt.title('Sobel Y'), plt.xticks([]), plt.yticks([])<br>
+plt.show()<br>
+**OUTPUT:-**
+![image](https://user-images.githubusercontent.com/98141711/187899484-5716c42d-9bd2-4a5a-8c3f-0fdf535b965d.png)<br>
+c) Edge detection using Prewitt Operator<br>
+import cv2<br>
+import numpy as np<br>
+from matplotlib import pyplot as plt<br>
+img = cv2.imread('animated.jpeg')<br>
+gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY) <br>
+img_gaussian = cv2.GaussianBlur (gray, (3,3),0)<br>
+kernelx = np.array([[1,1,1], [0,0,0],[-1,-1,-1]])<br>
+kernely=np.array([[-1,0,1], [-1,0,1],[-1,0,1]]) <br>
+img_prewittx= cv2.filter2D(img_gaussian, -1, kernelx) <br>
+img_prewitty = cv2.filter2D(img_gaussian, -1, kernely)<br>
+cv2.imshow("Original Image", img)<br>
+cv2.imshow("Prewitt x", img_prewittx)<br>
+cv2.imshow("Prewitt y", img_prewitty)<br>
+cv2.imshow("Prewitt", img_prewittx + img_prewitty)<br>
+cv2.waitKey()<br>
+cv2.destroyAllWindows()<br>
+**OUTPUT:-**<br>
+![image](https://user-images.githubusercontent.com/98141711/187903451-07fca319-5992-4cd6-aad7-83ee173f7f77.png)<br>
+![image](https://user-images.githubusercontent.com/98141711/187903539-69d7953e-df4d-4542-8787-228590034af0.png)<br>
+![image](https://user-images.githubusercontent.com/98141711/187903619-71a5c34a-d089-481e-b424-b8f3bb60b9e0.png)<br>
+![image](https://user-images.githubusercontent.com/98141711/187903690-a9d951a7-c0f1-442b-b4bd-c03873c5532d.png)<br>
+<br>
+d) Roberts Edge Detection- Roberts cross operator<br>
+import cv2<br>
+import numpy as np<br>
+from scipy import ndimage<br>
+from matplotlib import pyplot as plt <br>
+roberts_cross_v = np.array([[1, 0],<br>
+                            [0,-1]])<br>
+roberts_cross_h= np.array([[0, 1],<br>
+                           [-1,0]])<br>
+img= cv2.imread("animated.jpeg",0).astype('float64')<br>
+img/=255.0<br>
+vertical= ndimage.convolve( img, roberts_cross_v)<br>
+horizontal=ndimage.convolve( img, roberts_cross_h)<br>
+edged_img= np.sqrt( np.square (horizontal) + np.square(vertical))<br>
+edged_img*=255<br>
+cv2.imwrite("output.jpg",edged_img)<br>
+cv2.imshow("OutputImage", edged_img)<br>
+cv2.waitKey()<br>
+cv2.destroyAllwindows()<br>
+<br>
+**OUTPUT:-**<br>
+![image](https://user-images.githubusercontent.com/98141711/187904755-c8619d95-810b-49c3-b3bf-e485c8ad7d3a.png)<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
     
     
 
